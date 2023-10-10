@@ -1,0 +1,10 @@
+---
+const {
+  title,
+  realTitle = title + " | kcctfes23",
+  description = "kcctfes23",
+} = Astro.props
+---
+
+<title>{realTitle}</title>
+<meta name="description" content={description} />

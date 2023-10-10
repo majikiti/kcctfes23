@@ -1,0 +1,19 @@
+{
+  "name": "kcctfes23",
+  "dependencies": {
+    "astro": "3.2.3"
+  },
+  "devDependencies": {
+    "prettier": "3.0.3",
+    "prettier-plugin-astro": "0.12.0"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "private": true,
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev",
+    "fmt": "prettier -w src --plugin prettier-plugin-astro",
+    "preview": "astro preview"
+  },
+  "type": "module"
+}

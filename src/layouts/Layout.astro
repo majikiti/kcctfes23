@@ -1,0 +1,14 @@
+---
+import HeadMeta from "~/components/HeadMeta.astro"
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <HeadMeta {...Astro.props} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
