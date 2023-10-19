@@ -1,5 +1,7 @@
 ---
 import HeadMeta from "~/components/HeadMeta.astro"
+import "~/styles/global.css"
+import "~/styles/transition.css"
 ---
 
 <html lang="ja">
@@ -9,6 +11,8 @@ import HeadMeta from "~/components/HeadMeta.astro"
     <HeadMeta {...Astro.props} />
   </head>
   <body>
-    <slot />
+    <main class="transition-main">
+      <slot />
+    </main>
   </body>
 </html>
