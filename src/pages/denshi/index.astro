@@ -1,11 +1,69 @@
 ---
-import DLayout from "~/layouts/DLayout.astro"
+import Layout from "~/layouts/Layout.astro"
 ---
 
-<DLayout realTitle="2023電子科展示">
-  <h1>電子工学科 科展示</h1>
-</DLayout>
+<Layout realTitle="2023電子科展示">
+  <div class="content">
+    <section class="title">
+      <div class="head">2023電子科展示</div>
+      <h1 class="main">
+        <span>でんし</span>
+        <span>×</span>
+        <span>にゃんこ</span>
+      </h1>
+    </section>
+    <section>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </section>
+  </div>
+</Layout>
 
 <script lang="ts">
 import { gsap } from "gsap"
 </script>
+
+<style lang="scss">
+  .content {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, mistyrose, thistle);
+    font-family: "M PLUS Rounded 1c", sans-serif;
+  }
+
+  .title {
+    display: flex;
+    margin: 4rem;
+    height: calc(100vh - 8rem);
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8rem;
+    background: white;
+
+    .head {
+      padding-right: 16rem;
+      height: 72%;
+      position: absolute;
+      transform: rotate(-18deg);
+      font-size: 4rem;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 8rem;
+      font-weight: black;
+
+      span {
+        display: inline-block;
+      }
+    }
+  }
+</style>
