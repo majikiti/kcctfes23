@@ -1,0 +1,29 @@
+@use "sass:map";
+
+// fonts
+
+$f-common: "M PLUS Rounded 1c", sans-serif;
+$f-bb: "Train One", sans-serif;
+$f-tt: "Courier New", Courier, monospace;
+
+// responsive
+
+$bp: (
+  xs: 384px,
+  sm: 512px,
+  md: 768px,
+  lg: 896px,
+  xl: 1280px,
+);
+
+@mixin upto($key: md) {
+  @media (max-width: map.get($bp, $key)) {
+    @content;
+  }
+}
+
+@mixin downto($key: md) {
+  @media (min-width: map.get($bp, $key)) {
+    @content;
+  }
+}

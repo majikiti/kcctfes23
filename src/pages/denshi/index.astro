@@ -1,18 +1,18 @@
 ---
-import Layout from "~/layouts/Layout.astro"
+import BaseLayout from "~/layouts/BaseLayout.astro"
 ---
 
-<Layout realTitle="2023電子科展示">
+<BaseLayout realTitle="2023電子科展示">
   <div class="content">
-    <section class="title">
+    <section class="hero">
       <div class="head">2023電子科展示</div>
-      <h1 class="main">
-        <span>でんし</span>
+      <h1 class="title">
+        <span>Electronic</span>
         <span>×</span>
-        <span>にゃんこ</span>
+        <span>NEKO</span>
       </h1>
     </section>
-    <section>
+    <section class="container">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -22,48 +22,66 @@ import Layout from "~/layouts/Layout.astro"
       est laborum.
     </section>
   </div>
-</Layout>
+</BaseLayout>
 
-<script lang="ts">
-import { gsap } from "gsap"
+<script>
+  import { gsap } from "gsap"
 </script>
 
-<style lang="scss">
+<style lang="scss" is:global>
+  // ほんとはis:globalじゃなくてもいい
+  @use "~/styles/utils.scss" as *;
+
   .content {
     display: flex;
     flex-direction: column;
     background: linear-gradient(to bottom right, mistyrose, thistle);
     font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 500;
   }
 
-  .title {
+  .hero {
     display: flex;
-    margin: 4rem;
-    height: calc(100vh - 8rem);
+    margin: 3rem;
+    height: 100vh;
     position: relative;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 8rem;
+    border-radius: 5rem;
     background: white;
 
+    @include upto(sm) {
+      background: red;
+    }
+
     .head {
-      padding-right: 16rem;
-      height: 72%;
+      padding-right: 25%;
+      padding-bottom: 40%;
       position: absolute;
       transform: rotate(-18deg);
       font-size: 4rem;
+      font-weight: 700;
     }
 
-    .main {
+    .title {
       display: flex;
+      margin: 0;
+      position: absolute;
       flex-direction: column;
       align-items: center;
+      font-family: $f-bb;
       font-size: 8rem;
-      font-weight: black;
+      font-weight: 700;
+      line-height: 1.2;
 
       span {
         display: inline-block;
       }
     }
+  }
+
+  .container {
+    margin: 4rem;
   }
 </style>

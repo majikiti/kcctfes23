@@ -1,7 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap");
+@import "@fontsource/m-plus-rounded-1c/400.css";
+@import "@fontsource/m-plus-rounded-1c/700.css";
+@import "@fontsource/m-plus-rounded-1c/900.css";
+@import "@fontsource/train-one";
 
 html,
-body,
+body {
+  margin: 0;
+  height: 100%;
+}
+
 main {
   display: flex;
   margin: 0;
