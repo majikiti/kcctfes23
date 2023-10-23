@@ -1,9 +1,31 @@
 ---
+import LinkCard from "~/components/LinkCard.svelte"
 import SimpleLayout from "~/layouts/SimpleLayout.astro"
 ---
 
 <SimpleLayout realTitle="神戸高専 高専祭 2023">
   <h1>神戸高専 高専祭 2023</h1>
-  <h2><a href="https://kcctfes23.jp" target="_blank">kcctfes23.jp</a></h2>
-  <h2><a href="/denshi/">電子工学科 科展示</a></h2>
+  <p>ｱﾅﾘ</p>
+  <section class="cards">
+    <LinkCard href="/denshi/" color="white" bgColor="black">
+      電子工学科 科展示
+    </LinkCard>
+    <LinkCard
+      href="https://kcctfes23.jp"
+      target="_blank"
+      color="white"
+      bgColor="#CF5E37">
+      kcctfes23.jp
+    </LinkCard>
+  </section>
 </SimpleLayout>
+
+<style lang="scss">
+  .cards {
+    display: flex;
+    margin: 4rem 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+</style>

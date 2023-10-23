@@ -3,7 +3,56 @@ import Layout from "./BaseLayout.astro"
 ---
 
 <Layout {...Astro.props}>
-  <div>
-    <slot />
+  <div class="container">
+    <section>
+      <slot />
+    </section>
+    <footer>
+      &copy; 2023 <a href="https://majikiti.github.io">majikiti</a>
+    </footer>
   </div>
 </Layout>
+
+<style lang="scss" is:global>
+  @use "~/styles/utils.scss" as *;
+
+  $w-container: 640px;
+
+  // is:global要素
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, darkslateblue, midnightblue);
+    color: white;
+    font-family: $f-common;
+    font-size: 1.2rem;
+
+    & > section {
+      margin-top: 1.2rem;
+      width: 90%;
+      max-width: $w-container;
+    }
+
+    & > footer {
+      margin-top: auto;
+      padding: 1.2rem;
+      font-family: $f-tt;
+      font-weight: bolder;
+
+      a {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+</style>
