@@ -5,13 +5,42 @@ import BaseLayout from "~/layouts/BaseLayout.astro"
 <BaseLayout realTitle="2023電子科展示">
   <div class="content">
     <section class="hero">
-      <div class="head">2023電子科展示</div>
+      <div class="head">
+        <code>■2023_kcctFes_denshi</code>
+      </div>
       <h1 class="title">
         <span>Electronic</span>
         <span>×</span>
         <span>NEKO</span>
       </h1>
     </section>
+
+    <section class="theme">
+      <gothic>
+        <h2 class="or_section">THEME</h2>
+        <div class="theme_p">
+          <p>テーマは「でんし×にゃんこ」!？</p>
+          <p>
+            エレクトリックな技術にネコちゃんのモフモフが合わされば可能性は無限大
+          </p>
+        </div>
+      </gothic>
+    </section>
+
+    <section class="contents">
+      <gothic><h2 class="pa_section">CONTENTS</h2></gothic>
+
+      <div class="onef">
+        <gothic><h3 class="floor">1F</h3></gothic>
+        <!-- 1階の説明 -->
+      </div>
+
+      <div class="twof">
+        <gothic><h3 class="floor">2F</h3></gothic>
+        <!-- 2階の説明 -->
+      </div>
+    </section>
+
     <section class="container">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -35,48 +64,158 @@ import BaseLayout from "~/layouts/BaseLayout.astro"
   .content {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom right, mistyrose, thistle);
+    background: #2a1735;
     font-family: "M PLUS Rounded 1c", sans-serif;
     font-weight: 500;
   }
 
   .hero {
-    display: flex;
+    display: block;
+    height: 70vh;
     margin: 3rem;
-    height: 100vh;
     position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 5rem;
-    background: white;
+    // border-radius: 5rem;
+    background-image: radial-gradient(
+      rgba(54, 22, 93, 1),
+      rgba(54, 22, 93, 0.01) 90%
+    );
 
-    @include upto(sm) {
-      background: red;
+    @include size(sm) {
+      height: 100vh;
     }
 
     .head {
-      padding-right: 25%;
-      padding-bottom: 40%;
+      padding-top: 3%;
       position: absolute;
-      transform: rotate(-18deg);
-      font-size: 4rem;
-      font-weight: 700;
+      top: 0;
+      left: 3%;
+      font-size: 1rem;
+      color: #ff5800;
+      font-weight: 80;
+
+      @include size(sm) {
+        position: absolute;
+        top: 0%;
+        left: 5%;
+        font-size: 2rem;
+      }
     }
 
     .title {
+      @include size(sm) {
+        text-align: left;
+        position: absolute;
+        top: 8%;
+        left: 0;
+        line-height: 1;
+        font-size: 12vw;
+      }
+
       display: flex;
-      margin: 0;
       position: absolute;
+      top: 5%;
+      margin: 5%;
       flex-direction: column;
-      align-items: center;
+      text-align: center;
       font-family: $f-bb;
-      font-size: 8rem;
-      font-weight: 700;
-      line-height: 1.2;
+      font-size: 13vw;
+      color: white;
+      // font-weight: 700;
+      line-height: 1.5;
 
       span {
         display: inline-block;
+      }
+    }
+  }
+
+  .theme {
+    padding: 0 5%;
+    background-color: #17100e;
+    @include size(sm) {
+      padding: 0 5%;
+    }
+
+    .or_section {
+      color: #ff5800;
+      background-color: black;
+      padding: 10px 10px 0 10px;
+      width: 50%;
+      max-width: 300px;
+      font-size: 30px;
+      font-weight: 800;
+
+      @include size(sm) {
+        font-size: 60px;
+      }
+    }
+    .theme_p {
+      padding: 10% 5% 20% 5%;
+      color: white;
+      font-weight: bold;
+      font-style: italic;
+      text-align: center;
+      font-size: 20px;
+
+      @include size(sm) {
+        font-size: 30px;
+        padding: 10% 0 15% 0;
+      }
+    }
+  }
+
+  .contents {
+    padding: 0 5%;
+
+    .pa_section {
+      color: #9600ff;
+      background-color: black;
+      padding: 10px 10px 0 10px;
+      width: 75%;
+      max-width: 400px;
+      font-size: 30px;
+      font-weight: 800;
+
+      @include size(sm) {
+        font-size: 60px;
+      }
+    }
+
+    .floor {
+      color: #00ff00;
+      font-weight: 500;
+      font-style: italic;
+      font-size: 35px;
+
+      @include size(sm) {
+        font-size: 50px;
+      }
+    }
+
+    .onef {
+      padding: 1px 25px;
+      background-image: radial-gradient(
+        rgba(54, 22, 93, 1),
+        rgba(54, 22, 93, 0.01) 90%
+      );
+
+      @include size(sm) {
+        padding: 1px 50px;
+      }
+    }
+
+    .twof {
+      padding: 1px 25px;
+      background-image: radial-gradient(
+        rgba(54, 22, 93, 1),
+        rgba(54, 22, 93, 0.01) 90%
+      );
+
+      @include size(sm) {
+        padding: 1px 50px;
       }
     }
   }

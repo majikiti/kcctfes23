@@ -1,3 +1,5 @@
+@use "~/styles/utils.scss" as *;
+
 @import "@fontsource/m-plus-rounded-1c/400.css";
 @import "@fontsource/m-plus-rounded-1c/700.css";
 @import "@fontsource/m-plus-rounded-1c/900.css";
@@ -14,4 +16,12 @@ main {
   margin: 0;
   height: 100%;
   flex-direction: column;
+}
+
+code {
+  font-family: $f-tt;
+}
+
+gothic {
+  font-family: "Hiragino Kaku Gothic ProZ";
 }
